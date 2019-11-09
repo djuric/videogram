@@ -1,27 +1,10 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import Navigation from "./navigation"
 import Footer from "./footer"
 import "../styles/bootstrap.min.css"
 
 export default ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
-  const {
-    site: {
-      siteMetadata: { title },
-    },
-  } = data
-
   const menuItems = [
     {
       id: 1,
@@ -40,12 +23,12 @@ export default ({ children }) => {
       title: "About Us",
       url: "/",
       icon: false,
-    }
+    },
   ]
 
   return (
     <div className="wrapper">
-      <Header logoText={title} />
+      <Header />
       <Navigation items={menuItems} />
       {children}
       <Footer />
