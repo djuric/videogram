@@ -1,8 +1,24 @@
 import React, { useState } from "react"
-import { Link } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
 import { Menu, X } from "react-feather"
 
-export default ({ items }) => {
+const NAVIGATION_QUERY = graphql`
+  query NavigationItems {
+    wp {
+      menuItems(where: { location: VIDEOGRAM_HEADER_MAIN }) {
+        edges {
+          node {
+            id
+            label
+            url
+          }
+        }
+      }
+    }
+  }
+`
+
+export default () => {
   const [showMenu, setShowMenu] = useState(false)
 
   const handleButtonClick = () => {
@@ -10,6 +26,17 @@ export default ({ items }) => {
   }
 
   const menuClass = showMenu ? "collapsed" : "collapse"
+
+  const data = useStaticQuery(NAVIGATION_QUERY)
+
+  const items = data.wp.menuItems.edges.map(({ node }) => {
+    return {
+      id: node.id,
+      title: node.label,
+      url: node.url,
+      icon: false,
+    }
+  })
 
   return (
     <div className="navigation-categories bg-light">
