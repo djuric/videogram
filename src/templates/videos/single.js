@@ -1,6 +1,11 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../../components/layout"
+import { Icon } from "react-icons-kit"
+import { play3 } from "react-icons-kit/icomoon/play3"
+import { facebook2 } from "react-icons-kit/icomoon/facebook2"
+import { twitter } from "react-icons-kit/icomoon/twitter"
+import { whatsapp } from "react-icons-kit/icomoon/whatsapp"
 
 export default ({ data }) => (
   <Layout>
@@ -25,7 +30,7 @@ export default ({ data }) => (
             </div>
             <div className="col-6 text-right text-white">
               <span className="videoitem-length d-flex align-items-center justify-content-end">
-                PLAYICON
+                <Icon icon={play3} />
                 <span className="videoitem-length-time">
                   {data.wp.videoBy.length}
                 </span>
@@ -33,10 +38,16 @@ export default ({ data }) => (
             </div>
           </div>
         </div>
-        <div className="playtime-share pb-2">
-          <a href="#">FACEBOOKICON</a>
-          <a href="#">TWITTERICON</a>
-          <a href="#">WHATSSUPICON</a>
+        <div className="playtime-share pb-3">
+          <a href="#">
+            <Icon icon={facebook2} size={32} />
+          </a>
+          <a href="#">
+            <Icon icon={twitter} size={32} />
+          </a>
+          <a href="#">
+            <Icon icon={whatsapp} size={32} />
+          </a>
         </div>
       </div>
     </div>

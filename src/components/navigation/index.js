@@ -1,6 +1,8 @@
 import React, { useState } from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
-import { Menu, X } from "react-feather"
+import { Icon } from "react-icons-kit"
+import { menu } from "react-icons-kit/icomoon/menu"
+import { cross } from "react-icons-kit/icomoon/cross"
 
 const NAVIGATION_QUERY = graphql`
   query NavigationItems {
@@ -52,7 +54,11 @@ export default () => {
             aria-label="Toggle navigation"
             onClick={handleButtonClick}
           >
-            {showMenu ? <X size={16} /> : <Menu size={16} />}
+            {showMenu ? (
+              <Icon icon={cross} size={32} />
+            ) : (
+              <Icon icon={menu} size={32} />
+            )}
           </button>
 
           <div
