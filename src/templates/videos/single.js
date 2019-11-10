@@ -38,17 +38,6 @@ export default ({ data }) => (
             </div>
           </div>
         </div>
-        <div className="playtime-share pb-3">
-          <a href="#">
-            <Icon icon={facebook2} size={32} />
-          </a>
-          <a href="#">
-            <Icon icon={twitter} size={32} />
-          </a>
-          <a href="#">
-            <Icon icon={whatsapp} size={32} />
-          </a>
-        </div>
       </div>
     </div>
   </Layout>

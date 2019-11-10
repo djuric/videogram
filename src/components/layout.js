@@ -3,6 +3,7 @@ import Header from "./header"
 import Navigation from "./navigation"
 import Footer from "./footer"
 import "../styles/bootstrap.min.css"
+import "../styles/style.css"
 
 export default ({ children }) => (
   <div className="wrapper">
