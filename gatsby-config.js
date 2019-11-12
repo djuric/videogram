@@ -8,4 +8,15 @@ module.exports = {
   siteMetadata: {
     title: `VideoGram`,
   },
+  plugins: [
+    {
+      resolve: "gatsby-source-graphql",
+      options: {
+        typeName: "WP",
+        fieldName: "wp",
+        url: "http://videogram.loc/graphql",
+        refetchInterval: 60,
+      },
+    },
+  ],
 }

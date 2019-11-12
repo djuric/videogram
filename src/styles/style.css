@@ -1,0 +1,8 @@
+.playtime .playtime-title {
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: #fff;
+}
+.playtime .playtime-meta-categories a {
+  margin-right: 0.5rem;
+}

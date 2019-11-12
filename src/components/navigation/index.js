@@ -1,8 +1,26 @@
 import React, { useState } from "react"
-import { Link } from "gatsby"
-import { Menu, X } from "react-feather"
+import { Link, useStaticQuery, graphql } from "gatsby"
+import { Icon } from "react-icons-kit"
+import { menu } from "react-icons-kit/icomoon/menu"
+import { cross } from "react-icons-kit/icomoon/cross"
 
-export default ({ items }) => {
+const NAVIGATION_QUERY = graphql`
+  query NavigationItems {
+    wp {
+      menuItems(where: { location: VIDEOGRAM_HEADER_MAIN }) {
+        edges {
+          node {
+            id
+            label
+            url
+          }
+        }
+      }
+    }
+  }
+`
+
+export default () => {
   const [showMenu, setShowMenu] = useState(false)
 
   const handleButtonClick = () => {
@@ -10,6 +28,17 @@ export default ({ items }) => {
   }
 
   const menuClass = showMenu ? "collapsed" : "collapse"
+
+  const data = useStaticQuery(NAVIGATION_QUERY)
+
+  const items = data.wp.menuItems.edges.map(({ node }) => {
+    return {
+      id: node.id,
+      title: node.label,
+      url: node.url,
+      icon: false,
+    }
+  })
 
   return (
     <div className="navigation-categories bg-light">
@@ -25,7 +54,11 @@ export default ({ items }) => {
             aria-label="Toggle navigation"
             onClick={handleButtonClick}
           >
-            {showMenu ? <X size={16} /> : <Menu size={16} />}
+            {showMenu ? (
+              <Icon icon={cross} size={32} />
+            ) : (
+              <Icon icon={menu} size={32} />
+            )}
           </button>
 
           <div

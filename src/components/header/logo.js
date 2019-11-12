@@ -1,8 +1,26 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
 
-export default ({ logoText }) => (
-  <Link className="navbar-brand" to="/">
-    {logoText}
-  </Link>
-)
+export default () => {
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `)
+
+  const {
+    site: {
+      siteMetadata: { title },
+    },
+  } = data
+
+  return (
+    <Link className="navbar-brand" to="/">
+      {title}
+    </Link>
+  )
+}
