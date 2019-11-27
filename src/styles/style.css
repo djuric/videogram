@@ -1,8 +1,19 @@
+/* Main video player */
 .playtime .playtime-title {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 400;
   color: #fff;
+  padding: 0.7rem 0;
 }
 .playtime .playtime-meta-categories a {
   margin-right: 0.5rem;
+}
+
+/* Video items gallery */
+.videogallery .videoitem-image {
+  display: block;
+}
+.videogallery .videoitem-title {
+  font-size: 1.3rem;
+  font-weight: 400;
 }

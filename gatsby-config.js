@@ -15,7 +15,6 @@ module.exports = {
         typeName: "WP",
         fieldName: "wp",
         url: "http://videogram.loc/graphql",
-        refetchInterval: 60,
       },
     },
   ],

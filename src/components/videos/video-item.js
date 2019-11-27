@@ -1,37 +1,52 @@
 import React from "react"
+import { getVideoLink, getVideoCategoryLink } from "../../utils/url"
 import { Link } from "gatsby"
+import { Icon } from "react-icons-kit"
+import { play3 } from "react-icons-kit/icomoon/play3"
 
-export default ({ data: { title, featuredImage, slug, length } }) => {
-  return (
-    <div class="col-md-6 col-lg-4">
-      <div class="videoitem">
-        <Link to={`/${slug}`}>
-          <img
-            src={
-              featuredImage
-                ? featuredImage.mediaItemUrl
-                : "https://via.placeholder.com/600x400"
-            }
-            class="videoitem-image img-fluid"
-          />
-        </Link>
-        <div class="videoitem-meta py-1">
-          <div class="row">
-            <div class="col-6">
-              <span class="badge badge-primary">Celebrity</span>
-            </div>
-            <div class="col-6 text-right">
-              <span class="videoitem-length d-flex align-items-center justify-content-end">
-                <ion-icon name="play"></ion-icon>
-                <span class="videoitem-length-time">{length}</span>
+export default ({
+  data: { title, featuredImage, slug, length, videoCategories },
+  showCategory,
+}) => (
+  <div className="col-md-6 col-lg-4">
+    <div className="videoitem">
+      <Link to={getVideoLink(slug)} className="videoitem-image">
+        <img
+          src={
+            featuredImage
+              ? featuredImage.mediaItemUrl
+              : "https://via.placeholder.com/600x400"
+          }
+          alt="Placeholder"
+          className="img-fluid"
+        />
+      </Link>
+      <h3 className="videoitem-title pt-1">
+        <Link to={getVideoLink(slug)}>{title}</Link>
+      </h3>
+      <div className="videoitem-meta pb-2">
+        <div className="row">
+          <div className="col-6">
+            {showCategory && videoCategories.nodes.length > 0 && (
+              <Link
+                key={videoCategories.nodes[0].id}
+                to={getVideoCategoryLink(videoCategories.nodes[0].slug)}
+                className="badge badge-primary"
+              >
+                {videoCategories.nodes[0].name}
+              </Link>
+            )}
+          </div>
+          <div className="col-6 text-right">
+            {length.length > 0 && (
+              <span className="videoitem-length d-flex align-items-center justify-content-end">
+                <Icon icon={play3} />
+                <span className="videoitem-length-time">{length}</span>
               </span>
-            </div>
+            )}
           </div>
         </div>
-        <h3 class="videoitem-title pb-3">
-          <Link to={`/${slug}`}>{title}</Link>
-        </h3>
       </div>
     </div>
-  )
-}
+  </div>
+)

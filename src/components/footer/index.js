@@ -4,12 +4,14 @@ import { say } from "cowsay-browser"
 console.log(
   say({
     text:
-      "Hey, howdy, hi! If you find any problem with the website let me know https://github.com/djuric/videogram-gatsby",
+      "Hey, howdy, hi! If you find any problems with the website let me know https://github.com/djuric/videogram-gatsby",
   })
 )
 
 export default () => (
-  <div className="footer">
-    <p>Copyright 2019</p>
+  <div className="footer bg-primary text-white text-right py-2">
+    <div className="container">
+      <span>Copyright &copy; 2019</span>
+    </div>
   </div>
 )

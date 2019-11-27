@@ -1,6 +1,7 @@
 import React from "react"
 import Layout from "../../components/layout"
 import VideosLatest from "../../components/videos/latest"
+import { getVideoCategoryLink } from "../../utils/url"
 import { Link } from "gatsby"
 import { Icon } from "react-icons-kit"
 import { play3 } from "react-icons-kit/icomoon/play3"
@@ -26,23 +27,25 @@ export default ({
         <div className="playtime-meta pb-2">
           <div className="row">
             <div className="col-6 playtime-meta-categories">
-              {videoCategories.edges.map(({ node }) => {
+              {videoCategories.nodes.map(category => {
                 return (
                   <Link
-                    key={node.id}
-                    to={`/${node.slug}`}
+                    key={category.id}
+                    to={getVideoCategoryLink(category.slug)}
                     className="badge badge-danger"
                   >
-                    {node.name}
+                    {category.name}
                   </Link>
                 )
               })}
             </div>
             <div className="col-6 playtime-meta-length text-right text-white">
-              <span className="videoitem-length d-flex align-items-center justify-content-end">
-                <Icon icon={play3} />
-                <span className="videoitem-length-time">{length}</span>
-              </span>
+              {length.length > 0 && (
+                <span className="videoitem-length d-flex align-items-center justify-content-end">
+                  <Icon icon={play3} />
+                  <span className="videoitem-length-time">{length}</span>
+                </span>
+              )}
             </div>
           </div>
         </div>
