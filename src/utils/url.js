@@ -19,7 +19,15 @@ function getVideoLink(slug) {
  * @return {string} Video category URL
  */
 function getVideoCategoryLink(slug) {
-  return `/category/${slug}`
+  return `/video-category/${slug}`
 }
 
-export { getVideoLink, getVideoCategoryLink }
+/**
+ * Get navigation menu link based on base URL
+ */
+function getNavigationLink(url) {
+  const baseUrl = process.env.WORDPRESS_URL
+  return url ? url.replace(baseUrl, "") : "/"
+}
+
+export { getVideoLink, getVideoCategoryLink, getNavigationLink }

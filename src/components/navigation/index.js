@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
+import { getNavigationLink } from "../../utils/url"
 import { Icon } from "react-icons-kit"
 import { menu } from "react-icons-kit/icomoon/menu"
 import { cross } from "react-icons-kit/icomoon/cross"
@@ -31,11 +32,14 @@ export default () => {
 
   const data = useStaticQuery(NAVIGATION_QUERY)
 
+  /**
+   * WordPress Editor is responsible for making sure that links inserted into navigation go to pages that actually exist.
+   */
   const items = data.wp.menuItems.edges.map(({ node }) => {
     return {
       id: node.id,
       title: node.label,
-      url: node.url,
+      url: getNavigationLink(node.url),
       icon: false,
     }
   })

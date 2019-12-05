@@ -69,11 +69,18 @@ module.exports = async ({ graphql, actions }) => {
   const videosPerPage = 6
 
   /**
-   * Base URL for category pages. Base can be removed by settings this to false but in that case uniqueness of the pages can't be guaranteed.  If there is another page with the same URL then it will be overwritten.
+   * Base URL for category pages.
+   *
+   * Must also be changed from src/utils/url.js
+   * @todo possibly put categoryBase as environment variable
+   *
+   * Base can be removed by settings this to false but in that case uniqueness of the pages can't be guaranteed.  If there is another page with the same URL then it will be overwritten.
+   *
+   * It defaults to "video-category" because this is the video taxonomy slug defined in WordPress plugin. However it's not required that it matches taxonomy slug but it's helpful when taxonomy links are added from Appearance > Menus.
    *
    * @type {string}
    */
-  const categoryBase = "category"
+  const categoryBase = "video-category"
 
   /**
    * Recursive function used for filling allCategories variable. When this
