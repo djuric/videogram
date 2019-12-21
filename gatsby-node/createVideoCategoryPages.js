@@ -66,7 +66,7 @@ module.exports = async ({ graphql, actions }) => {
    *
    * @type {number}
    */
-  const videosPerPage = 6
+  const videosPerPage = 9
 
   /**
    * Base URL for category pages.
