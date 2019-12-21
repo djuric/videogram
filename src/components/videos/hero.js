@@ -18,6 +18,10 @@ export default () => {
     }
   `)
 
+  if (videos.nodes.length === 0) {
+    return null
+  }
+
   return (
     <div className="hero bg-primary text-white">
       <div className="container">

@@ -21,5 +21,14 @@ module.exports = {
         url: `${process.env.WORDPRESS_URL}/graphql`,
       },
     },
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-sharp",
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "images",
+        path: `${__dirname}/src/assets/images`,
+      },
+    },
   ],
 }

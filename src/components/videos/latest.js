@@ -15,8 +15,14 @@ export default () => {
               embedded_code
               length
               featuredImage {
-                altText
-                mediaItemUrl
+                sourceUrl
+                imageFile {
+                  childImageSharp {
+                    fluid(maxWidth: 510) {
+                      ...GatsbyImageSharpFluid
+                    }
+                  }
+                }
               }
               videoCategories(first: 5) {
                 nodes {
