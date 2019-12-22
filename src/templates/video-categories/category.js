@@ -14,11 +14,15 @@ export default props => {
       <div className="container">
         <h1>{name}</h1>
         <div className="videogallery">
-          <div className="row">
-            {edges.map(({ node }) => {
-              return <VideoItem key={node.id} data={node} />
-            })}
-          </div>
+          {edges.length ? (
+            <div className="row">
+              {edges.map(({ node }) => {
+                return <VideoItem key={node.id} data={node} />
+              })}
+            </div>
+          ) : (
+            <p>There are no videos found in this category.</p>
+          )}
         </div>
         <Pagination
           totalPages={pagination.totalPages}
