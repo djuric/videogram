@@ -18,7 +18,7 @@ module.exports = {
       options: {
         typeName: "WP",
         fieldName: "wp",
-        url: `${process.env.WORDPRESS_URL}/graphql`,
+        url: `${process.env.GATSBY_WORDPRESS_URL}/graphql`,
       },
     },
     "gatsby-transformer-sharp",

@@ -26,7 +26,7 @@ function getVideoCategoryLink(slug) {
  * Get navigation menu link based on base URL
  */
 function getNavigationLink(url) {
-  const baseUrl = process.env.WORDPRESS_URL
+  const baseUrl = process.env.GATSBY_WORDPRESS_URL
   return url ? url.replace(baseUrl, "") : "/"
 }
 
