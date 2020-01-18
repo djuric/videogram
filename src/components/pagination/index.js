@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import { range } from "../../utils/helpers"
+import { range } from "lodash"
 import { getPageNumber, getPageNumberLink } from "../../utils/pagination"
 
 export default ({ totalPages, description, basePath, currentPath }) => {
@@ -53,7 +53,7 @@ export default ({ totalPages, description, basePath, currentPath }) => {
           </li>
         )}
 
-        {range(1, totalPages).map(page => {
+        {range(1, totalPages + 1).map(page => {
           if (
             !(
               page >= currentPage + pageRange + 1 ||

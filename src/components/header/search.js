@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
 import { getVideoLink } from "../../utils/url"
-import _ from "lodash"
+import { debounce } from "lodash"
 import { useQuery } from "@apollo/react-hooks"
 import { gql } from "apollo-boost"
 
@@ -30,7 +30,7 @@ export default () => {
     }
 
     setKeyword(value)
-    const search = _.debounce(allowQuery, 800)
+    const search = debounce(allowQuery, 800)
 
     setDebouncer(prevDebouncer => {
       if (prevDebouncer.cancel) {
