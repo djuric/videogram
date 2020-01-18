@@ -6,10 +6,10 @@ export default () => (
   <div className="header bg-primary text-white py-1">
     <div className="container">
       <div className="row">
-        <div className="col-md-6 text-center text-md-left">
+        <div className="col-md-8 text-center text-md-left">
           <Logo />
         </div>
-        <div className="col-md-6">
+        <div className="col-md-4">
           <Search />
         </div>
       </div>

@@ -4,6 +4,10 @@
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
 
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `VideoGram`,
@@ -14,8 +18,16 @@ module.exports = {
       options: {
         typeName: "WP",
         fieldName: "wp",
-        url: "http://videogram.loc/graphql",
-        refetchInterval: 60,
+        url: `${process.env.WORDPRESS_URL}/graphql`,
+      },
+    },
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-sharp",
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "images",
+        path: `${__dirname}/src/assets/images`,
       },
     },
   ],

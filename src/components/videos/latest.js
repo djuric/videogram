@@ -6,24 +6,30 @@ export default () => {
   const query = graphql`
     query Videos {
       wp {
-        videos {
+        videos(first: 12) {
           edges {
             node {
-              slug
+              id
               title
+              slug
+              embedded_code
               length
-              videoCategories(first: 1) {
-                edges {
-                  node {
-                    id
-                    name
-                    slug
+              featuredImage {
+                sourceUrl
+                imageFile {
+                  childImageSharp {
+                    fluid(maxWidth: 510) {
+                      ...GatsbyImageSharpFluid
+                    }
                   }
                 }
               }
-              featuredImage {
-                altText
-                mediaItemUrl
+              videoCategories(first: 5) {
+                nodes {
+                  id
+                  name
+                  slug
+                }
               }
             }
           }
@@ -31,18 +37,17 @@ export default () => {
       }
     }
   `
+
   const data = useStaticQuery(query)
-  console.log(data)
 
   return (
-    <div className="videos-latest">
-      <h2>Latest Videos</h2>
-      <div class="videogallery py-5">
-        <div class="container">
-          <div class="row">
+    <div className="videos-latest py-3">
+      <div className="container">
+        <h2>Latest Videos</h2>
+        <div className="videogallery">
+          <div className="row">
             {data.wp.videos.edges.map(({ node }) => {
-              console.log(node)
-              return <VideoItem data={node} />
+              return <VideoItem key={node.id} data={node} showCategory={true} />
             })}
           </div>
         </div>
