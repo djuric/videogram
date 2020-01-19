@@ -9,9 +9,6 @@ require("dotenv").config({
 })
 
 module.exports = {
-  siteMetadata: {
-    title: `VideoGram`,
-  },
   plugins: [
     {
       resolve: "gatsby-source-graphql",
