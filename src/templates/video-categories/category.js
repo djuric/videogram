@@ -1,6 +1,7 @@
 import React from "react"
 import Layout from "../../components/layout"
 import VideoItem from "../../components/videos/video-item"
+import SEO from "../../components/SEO"
 import Pagination from "../../components/pagination"
 
 export default props => {
@@ -11,6 +12,7 @@ export default props => {
 
   return (
     <Layout>
+      <SEO title={name} />
       <div className="container">
         <h1>{name}</h1>
         <div className="videogallery">

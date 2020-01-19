@@ -1,6 +1,7 @@
 import React from "react"
 import Layout from "../../components/layout"
 import VideosLatest from "../../components/videos/latest"
+import SEO from "../../components/SEO"
 import { getVideoCategoryLink } from "../../utils/url"
 import { Link } from "gatsby"
 import { Icon } from "react-icons-kit"
@@ -10,6 +11,7 @@ export default ({
   pageContext: { title, embedded_code, length, videoCategories },
 }) => (
   <Layout>
+    <SEO title={title} />
     <div className="playtime bg-primary">
       <div className="container">
         <div className="row">
