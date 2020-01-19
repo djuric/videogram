@@ -82,6 +82,7 @@ export default () => {
           onChange={handleKeyword}
           value={keyword}
           autoComplete="off"
+          aria-label="Search query"
         />
         {loading && (
           <div className="spinner-border" role="status">

@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import { Helmet } from "react-helmet"
 import PropTypes from "prop-types"
 
-const SEO = ({ title }) => {
+const SEO = ({ title, lang }) => {
   const data = useStaticQuery(graphql`
     query {
       wp {
@@ -25,15 +25,17 @@ const SEO = ({ title }) => {
     ? `${title} - ${siteTitle}`
     : `${siteTitle} - ${siteTagline}`
 
-  return <Helmet title={pageTitle} />
+  return <Helmet title={pageTitle} htmlAttributes={{ lang }} />
 }
 
 export default SEO
 
 SEO.propTypes = {
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
+  lang: PropTypes.string,
 }
 
 SEO.defaultProps = {
   title: false,
+  lang: "en",
 }
