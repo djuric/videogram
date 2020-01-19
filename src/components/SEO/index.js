@@ -9,7 +9,7 @@ const SEO = ({ title }) => {
       wp {
         generalSettings {
           title
-          description
+          siteTagline: description
         }
       }
     }
@@ -17,17 +17,15 @@ const SEO = ({ title }) => {
 
   const {
     wp: {
-      generalSettings: { title: siteTitle, description },
+      generalSettings: { title: siteTitle, siteTagline },
     },
   } = data
 
-  return (
-    <Helmet>
-      <title>
-        {title ? `${title} - ${siteTitle}` : `${siteTitle} - ${description}`}
-      </title>
-    </Helmet>
-  )
+  const pageTitle = title
+    ? `${title} - ${siteTitle}`
+    : `${siteTitle} - ${siteTagline}`
+
+  return <Helmet title={pageTitle} />
 }
 
 export default SEO
