@@ -1,5 +1,5 @@
 {
-  "name": "videogram-gatsby",
+  "name": "videogram",
   "private": true,
   "description": "Static video website built with Gatsby",
   "version": "0.0.1",
@@ -35,9 +35,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/djuric/videogram-gatsby"
+    "url": "https://github.com/djuric/videogram"
   },
   "bugs": {
-    "url": "https://github.com/djuric/videogram-gatsby/issues"
+    "url": "https://github.com/djuric/videogram/issues"
   }
 }

@@ -4,6 +4,6 @@ export { wrapRootElement } from "./src/apollo/wrap-root-element"
 console.log(
   say({
     text:
-      "Hey, howdy, hi! Feel free to report any problems https://github.com/djuric/videogram-gatsby",
+      "Hey, howdy, hi! Feel free to report any problems https://github.com/djuric/videogram",
   })
 )
