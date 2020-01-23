@@ -1,5 +1,8 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
+import DefaultImg from "../../assets/images/noimage.png"
+import { Link, useStaticQuery, graphql } from "gatsby"
+import { getVideoLink } from "../../utils/url"
 
 export default () => {
   const {
@@ -11,7 +14,19 @@ export default () => {
           nodes {
             title
             excerpt
-            embedded_code
+            slug
+            featuredImage {
+              altText
+              mediaItemUrl
+              sourceUrl
+              imageFile {
+                childImageSharp {
+                  fluid(maxWidth: 635) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -22,24 +37,30 @@ export default () => {
     return null
   }
 
+  const { title, excerpt, slug, featuredImage } = videos.nodes[0]
+
   return (
     <div className="hero bg-primary text-white">
       <div className="container">
         <div className="row align-items-center">
-          <div className="col-lg-8 col-md-12">
-            <div
-              className="embed-responsive embed-responsive-16by9"
-              dangerouslySetInnerHTML={{
-                __html: videos.nodes[0].embedded_code,
-              }}
-            />
+          <div className="col-lg-7 col-md-12">
+            <Link to={getVideoLink(slug)}>
+              {featuredImage ? (
+                <Img
+                  fluid={featuredImage.imageFile.childImageSharp.fluid}
+                  alt={featuredImage.altText}
+                />
+              ) : (
+                <img src={DefaultImg} className="img-fluid" alt={title} />
+              )}
+            </Link>
           </div>
-          <div className="col-lg-4 col-md-12">
-            <p className="h1">{videos.nodes[0].title}</p>
+          <div className="col-lg-5 col-md-12">
+            <p className="h1">{title}</p>
             <div
               className="lead"
               dangerouslySetInnerHTML={{
-                __html: videos.nodes[0].excerpt,
+                __html: excerpt,
               }}
             />
           </div>

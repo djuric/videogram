@@ -4,8 +4,8 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 export default () => {
   const data = useStaticQuery(graphql`
     query {
-      site {
-        siteMetadata {
+      wp {
+        generalSettings {
           title
         }
       }
@@ -13,8 +13,8 @@ export default () => {
   `)
 
   const {
-    site: {
-      siteMetadata: { title },
+    wp: {
+      generalSettings: { title },
     },
   } = data
 
