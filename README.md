@@ -13,6 +13,8 @@
 
 Videogram is a static website for serving video content. It's built with Gatsby as a SSG and WordPress as a CMS. Structure of the website is currently quite simple. There is a video page for each video, video categories for easy navigation, homepage which is showing latest videos with featured video hero (optional) and quick search in header.
 
+Live demo available at [videogram.netlify.com](https://videogram.netlify.com)
+
 ## Server side setup
 
 To store and manage content you will need a WordPress installation. Local installation is fine for development but a public install is recommended for production. Reason for this is quick search which is currently made for live querying GraphQL API.
