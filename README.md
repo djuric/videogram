@@ -49,7 +49,7 @@ Create `.env.development` and `.env.production` files with each having its own e
 
 ```
 GATSBY_WORDPRESS_URL=https://your-wp-site-url.com
-GATSBY_WORDPRESS_GRAPHQL=https://your-wp-site-url.com
+GATSBY_WORDPRESS_GRAPHQL=https://your-wp-site-url.com/graphql
 ```
 
 Start development server:
