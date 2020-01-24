@@ -4,14 +4,16 @@
   <a href="https://github.com/djuric/videogram/blob/master/LICENSE">
     <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="Released under the MIT license" />
   </a>
-  <a href="https://api.netlify.com/api/v1/badges/4070d0f5-40bc-4ddc-9536-1f8f6eaf821a/deploy-status">
-    <img src="https://api.netlify.com/api/v1/badges/4070d0f5-40bc-4ddc-9536-1f8f6eaf821a/deploy-status" alt="Netlify deploy status" />
+  <a href="https://app.netlify.com/sites/videogram/deploys">
+    <img src="https://api.netlify.com/api/v1/badges/5b2e13ea-2f0c-44f8-bea4-82e8afaacf3a/deploy-status" alt="Netlify deploy status" />
   </a>
 </p>
 
 ## Overview
 
 Videogram is a static website for serving video content. It's built with Gatsby as a SSG and WordPress as a CMS. Structure of the website is currently quite simple. There is a video page for each video, video categories for easy navigation, homepage which is showing latest videos with featured video hero (optional) and quick search in header.
+
+Live demo available at [videogram.netlify.com](https://videogram.netlify.com)
 
 ## Server side setup
 
@@ -49,7 +51,7 @@ Create `.env.development` and `.env.production` files with each having its own e
 
 ```
 GATSBY_WORDPRESS_URL=https://your-wp-site-url.com
-GATSBY_WORDPRESS_GRAPHQL=https://your-wp-site-url.com
+GATSBY_WORDPRESS_GRAPHQL=https://your-wp-site-url.com/graphql
 ```
 
 Start development server:
@@ -70,7 +72,14 @@ Following techniques are used in the project:
 
 ## Deploy
 
-The quickest way to deploy is with Netlify
+Netlify makes it easy to build and deploy websites. To deploy the project you should have `gatsby build` as a build command and `public/` as publish directory.
+
+In Advanced build settings you can define following environment variables to deploy from your own WordPress installation:
+
+| Key                      | Value                                  |
+| ------------------------ | -------------------------------------- |
+| GATSBY_WORDPRESS_URL     | `https://your-wp-site-url.com`         |
+| GATSBY_WORDPRESS_GRAPHQL | `https://your-wp-site-url.com/graphql` |
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/djuric/videogram)
 
