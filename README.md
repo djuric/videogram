@@ -23,7 +23,7 @@ After WordPress is installed, following steps are required to complete the setup
 
 - Permalinks should be set to Post name
 - Install and activate [WPGraphQL](https://github.com/wp-graphql/wp-graphql) to enable GraphQL API
-- Install and activate [Videogram WP](https://github.com/djuric/videogram-plugin) for managing video content
+- Install and activate [Videogram WP](https://github.com/djuric/videogram-wp) for managing video content
 
 Optional steps:
 
@@ -82,6 +82,20 @@ In Advanced build settings you can define following environment variables to dep
 | GATSBY_WORDPRESS_GRAPHQL | `https://your-wp-site-url.com/graphql` |
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/djuric/videogram)
+
+## Lighthouse report
+
+![Lighthouse desktop results](https://videogram.zarko.dev/wp-content/uploads/2020/01/videogram-desktop.png)
+
+- **Device**: Emulated Desktop
+- **Network throttling:** 150 ms TCP RTT, 1,638.4 Kbps throughput (Simulated)
+- **CPU throttling:** 4x slowdown (Simulated)
+
+![Lighthouse mobile results](https://videogram.zarko.dev/wp-content/uploads/2020/01/videogram-mobile.png)
+
+- **Device**: Emulated Nexus 5X
+- **Network throttling:** 150 ms TCP RTT, 1,638.4 Kbps throughput (Simulated)
+- **CPU throttling:** 4x slowdown (Simulated)
 
 ## Acknowledgments
 

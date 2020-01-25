@@ -47,7 +47,7 @@ export default () => {
       videos(where: { search: $keyword }) {
         nodes {
           title
-          uri
+          slug
           featuredImage {
             altText
             sourceUrl(size: THUMBNAIL)
@@ -95,8 +95,8 @@ export default () => {
           videos.map(video => {
             return (
               <Link
-                to={getVideoLink(video.uri)}
-                key={video.uri}
+                to={getVideoLink(video.slug)}
+                key={video.slug}
                 className="header-search-results__item"
               >
                 <div className="header-search-results__item-col1">
