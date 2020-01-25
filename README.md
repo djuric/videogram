@@ -23,7 +23,7 @@ After WordPress is installed, following steps are required to complete the setup
 
 - Permalinks should be set to Post name
 - Install and activate [WPGraphQL](https://github.com/wp-graphql/wp-graphql) to enable GraphQL API
-- Install and activate [Videogram WP](https://github.com/djuric/videogram-plugin) for managing video content
+- Install and activate [Videogram WP](https://github.com/djuric/videogram-wp) for managing video content
 
 Optional steps:
 
