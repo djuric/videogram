@@ -97,6 +97,10 @@ In Advanced build settings you can define following environment variables to dep
 - **Network throttling:** 150 ms TCP RTT, 1,638.4 Kbps throughput (Simulated)
 - **CPU throttling:** 4x slowdown (Simulated)
 
+## Contributions
+
+This is an open source project and any contributions, feedback or questions are more than welcome!
+
 ## Acknowledgments
 
 - [Gatsby](https://github.com/gatsbyjs/gatsby) for being an awesome static site generator
