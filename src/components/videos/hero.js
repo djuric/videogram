@@ -49,8 +49,8 @@ export default () => {
             <Link to={getVideoLink(slug)}>
               {featuredImage ? (
                 <Img
-                  fluid={featuredImage.imageFile.childImageSharp.fluid}
-                  alt={featuredImage.altText}
+                  fluid={featuredImage.node.imageFile.childImageSharp.fluid}
+                  alt={featuredImage.node.altText}
                 />
               ) : (
                 <img src={DefaultImg} className="img-fluid" alt={title} />
