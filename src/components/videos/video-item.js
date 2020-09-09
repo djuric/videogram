@@ -18,7 +18,7 @@ export default props => {
         <Link to={getVideoLink(slug)} className="videoitem-image">
           {featuredImage ? (
             <Img
-              fluid={featuredImage.imageFile.childImageSharp.fluid}
+              fluid={featuredImage.node.imageFile.childImageSharp.fluid}
               alt={title}
             />
           ) : (

@@ -6,6 +6,7 @@ const VideoFragment = `
         embedded_code
         length
         featuredImage {
+          node {
             altText
             mediaItemUrl
             sourceUrl
@@ -27,6 +28,7 @@ const VideoFragment = `
                 }
               }
             }
+          }
         }
         videoCategories(first: 5) {
           nodes {

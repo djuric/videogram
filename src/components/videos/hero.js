@@ -16,13 +16,15 @@ export default () => {
             excerpt
             slug
             featuredImage {
-              altText
-              mediaItemUrl
-              sourceUrl
-              imageFile {
-                childImageSharp {
-                  fluid(maxWidth: 635) {
-                    ...GatsbyImageSharpFluid
+              node {
+                altText
+                mediaItemUrl
+                sourceUrl
+                imageFile {
+                  childImageSharp {
+                    fluid(maxWidth: 635) {
+                      ...GatsbyImageSharpFluid
+                    }
                   }
                 }
               }

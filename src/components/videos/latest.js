@@ -15,11 +15,13 @@ export default () => {
               embedded_code
               length
               featuredImage {
-                sourceUrl
-                imageFile {
-                  childImageSharp {
-                    fluid(maxWidth: 510) {
-                      ...GatsbyImageSharpFluid
+                node {
+                  sourceUrl
+                  imageFile {
+                    childImageSharp {
+                      fluid(maxWidth: 510) {
+                        ...GatsbyImageSharpFluid
+                      }
                     }
                   }
                 }
