@@ -1,6 +1,7 @@
 const VideoFragment = `
     fragment VideoFragment on WP_Video {
         id
+        databaseId
         title
         slug
         embedded_code

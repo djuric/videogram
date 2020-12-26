@@ -2,7 +2,7 @@
   "name": "videogram",
   "private": true,
   "description": "Static video website built with Gatsby",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
@@ -13,25 +13,27 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
-    "@apollo/react-hooks": "^3.1.3",
-    "apollo-boost": "^0.4.7",
+    "@apollo/client": "^3.3.6",
     "cowsay-browser": "^1.1.8",
-    "gatsby": "^2.17.4",
-    "gatsby-image": "^2.2.34",
-    "gatsby-plugin-sharp": "^2.3.5",
-    "gatsby-source-filesystem": "^2.1.40",
-    "gatsby-source-graphql": "^2.1.21",
-    "gatsby-transformer-sharp": "^2.3.7",
+    "gatsby": "^2.29.0",
+    "gatsby-image": "^2.8.0",
+    "gatsby-plugin-sharp": "^2.11.0",
+    "gatsby-source-filesystem": "^2.8.0",
+    "gatsby-source-graphql": "^2.11.0",
+    "gatsby-transformer-sharp": "^2.9.0",
     "isomorphic-fetch": "^2.2.1",
-    "lodash": "^4.17.15",
-    "react": "^16.11.0",
-    "react-dom": "^16.11.0",
+    "joi": "^17.3.0",
+    "jwt-decode": "^3.1.2",
+    "lodash": "^4.17.20",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
     "react-helmet": "^5.2.1",
-    "react-icons-kit": "^1.3.1"
+    "react-icons-kit": "^1.3.1",
+    "react-toastify": "^6.2.0"
   },
   "devDependencies": {
-    "eslint-config-react-app": "^5.0.2",
-    "prettier": "^1.18.2"
+    "eslint-config-react-app": "^5.2.1",
+    "prettier": "^1.19.1"
   },
   "repository": {
     "type": "git",

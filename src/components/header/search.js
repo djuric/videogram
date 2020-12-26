@@ -2,8 +2,7 @@ import React, { useState } from "react"
 import { Link } from "gatsby"
 import { getVideoLink } from "../../utils/url"
 import { debounce } from "lodash"
-import { useQuery } from "@apollo/react-hooks"
-import { gql } from "apollo-boost"
+import { useQuery, gql } from "@apollo/client"
 
 /**
  * Flag for search query which should only run after debounce and if keyword is not empty.
@@ -49,8 +48,10 @@ export default () => {
           title
           slug
           featuredImage {
-            altText
-            sourceUrl(size: THUMBNAIL)
+            node {
+              altText
+              sourceUrl(size: THUMBNAIL)
+            }
           }
         }
       }

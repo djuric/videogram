@@ -34,3 +34,14 @@ exports.createResolvers = ({
     },
   })
 }
+
+exports.onCreatePage = async ({ page, actions }) => {
+  const { createPage } = actions
+
+  if (page.path.match(/^\/account/)) {
+    page.matchPath = "/account/*"
+
+    // Update the page.
+    createPage(page)
+  }
+}

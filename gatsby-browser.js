@@ -1,5 +1,5 @@
 import { say } from "cowsay-browser"
-export { wrapRootElement } from "./src/apollo/wrap-root-element"
+export { wrapRootElement } from "./wrap-root-element"
 
 console.log(
   say({

@@ -69,3 +69,16 @@
 .header-search-results__item-col2 {
   padding-left: 0.6rem;
 }
+
+/* Favorites items */
+.videoitem-favorites .videoitem-title {
+  font-size: 1.1rem;
+}
+
+/* Toastify */
+.Toastify .Toastify__toast--info {
+  background: #46aac4;
+}
+.Toastify .Toastify__toast--success {
+  background: #28a745;
+}
