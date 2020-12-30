@@ -93,27 +93,27 @@ export default () => {
       </form>
       <div className="header-search-results shadow">
         {!loading &&
-          videos.map(video => {
-            return (
-              <Link
-                to={getVideoLink(video.slug)}
-                key={video.slug}
-                className="header-search-results__item"
-              >
+          videos.map(video => (
+            <Link
+              to={getVideoLink(video.slug)}
+              key={video.slug}
+              className="header-search-results__item"
+            >
+              {video.featuredImage && (
                 <div className="header-search-results__item-col1">
                   <img
-                    src={video.featuredImage.sourceUrl}
-                    alt={video.featuredImage.altText}
+                    src={video.featuredImage.node.sourceUrl}
+                    alt={video.featuredImage.node.altText}
                   />
                 </div>
-                <div className="header-search-results__item-col2">
-                  {video.title.length > 70
-                    ? `${video.title.substr(0, 70)}...`
-                    : video.title}
-                </div>
-              </Link>
-            )
-          })}
+              )}
+              <div className="header-search-results__item-col2">
+                {video.title.length > 70
+                  ? `${video.title.substr(0, 70)}...`
+                  : video.title}
+              </div>
+            </Link>
+          ))}
       </div>
     </div>
   )
