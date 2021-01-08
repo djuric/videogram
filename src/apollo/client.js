@@ -11,7 +11,8 @@ import {
   getAuthToken,
   getRefreshToken,
   setAuthToken,
-  isTokenExpired,
+  isExpiredToken,
+  isValidToken,
 } from "../utils/auth"
 
 const link = new HttpLink({
@@ -31,6 +32,8 @@ const cache = new InMemoryCache({
 
 const refreshAuthToken = async () => {
   const refreshToken = getRefreshToken()
+  if (!isValidToken(refreshToken)) return false
+
   const query = `
   mutation RefreshAuthToken($input: RefreshJwtAuthTokenInput!) {
     refreshJwtAuthToken(input: $input) {
@@ -73,9 +76,8 @@ const refreshAuthToken = async () => {
 
 const authMiddleware = new ApolloLink(async (operation, forward) => {
   let token = getAuthToken()
-  const isExpired = isTokenExpired(token)
 
-  if (isExpired) {
+  if (!isValidToken(token) || isExpiredToken(token)) {
     const refreshedToken = await refreshAuthToken()
     if (refreshedToken) {
       token = refreshedToken

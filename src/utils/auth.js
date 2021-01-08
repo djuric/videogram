@@ -1,20 +1,26 @@
 import jwtDecode from "jwt-decode"
 
-const localStorageAuthTokenKey = "authToken"
 const localStorageRefreshTokenKey = "refreshToken"
+
+// Authentication token is stored in memory.
+let authToken = {
+  token: "",
+}
 
 export const isBrowser = () => typeof window !== "undefined"
 
 export const getAuthToken = () => {
-  return isBrowser() && window.localStorage.getItem(localStorageAuthTokenKey)
+  return authToken.token
 }
 
 export const setAuthToken = token => {
-  window.localStorage.setItem(localStorageAuthTokenKey, token)
+  authToken.token = token
 }
 
 export const removeAuthToken = () => {
-  window.localStorage.removeItem(localStorageAuthTokenKey)
+  authToken = {
+    token: "",
+  }
 }
 
 export const decodeAuthToken = token => {
@@ -41,9 +47,21 @@ export const removeRefreshToken = () => {
   window.localStorage.removeItem(localStorageRefreshTokenKey)
 }
 
-export const isTokenExpired = token => {
-  if (!token) return null
+// Check if the token exists and has valid format.
+export const isValidToken = token => {
+  if (!token) return false
 
+  try {
+    jwtDecode(token)
+  } catch (e) {
+    return false
+  }
+
+  return true
+}
+
+// Check if token is expired.
+export const isExpiredToken = token => {
   const decoded = jwtDecode(token)
   const leeway = 60
   const timeNow = Math.floor(Date.now() / 1000)
