@@ -25,7 +25,7 @@ const SignUp = () => {
     }
   `
 
-  const [register, { data, loading }] = useMutation(USER_REGISTER, {
+  const [register, { loading }] = useMutation(USER_REGISTER, {
     onError(err) {
       const errorMessage = err.networkError
         ? "A network error occured."
