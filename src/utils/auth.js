@@ -28,8 +28,8 @@ export const decodeAuthToken = token => {
 
   try {
     tokenDecoded = jwtDecode(token)
-  } catch (e) {
-    console.log("Can't decode the JWT token.")
+  } catch {
+    return false
   }
 
   return tokenDecoded
@@ -53,7 +53,7 @@ export const isValidToken = token => {
 
   try {
     jwtDecode(token)
-  } catch (e) {
+  } catch {
     return false
   }
 
