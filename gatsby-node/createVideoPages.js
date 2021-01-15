@@ -68,10 +68,10 @@ module.exports = async ({ graphql, actions }) => {
   /**
    * Create video page for each video stored in allVideos
    */
-  fetchedVideos.forEach(video => {
+  fetchedVideos.forEach((video) => {
     console.log(`Creating video page: /${video.slug}/`)
     createPage({
-      path: video.slug,
+      path: decodeURIComponent(video.slug),
       component: path.resolve("./src/templates/videos/single.js"),
       context: {
         ...video,
