@@ -5,9 +5,11 @@ import { Link } from "gatsby"
 import Profile from "../components/account/profile"
 import Favorites from "../components/account/favorites"
 import PrivateRoute from "./../components/private-route"
+import SEO from "../components/SEO"
 
 export default () => (
   <Layout>
+    <SEO title="My Account" />
     <div className="container py-5">
       <h1>My Account</h1>
       <div className="row mt-4">
