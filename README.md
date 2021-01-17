@@ -81,6 +81,7 @@ In Advanced build settings you can define following environment variables to dep
 | ------------------------ | -------------------------------------- |
 | GATSBY_WORDPRESS_URL     | `https://your-wp-site-url.com`         |
 | GATSBY_WORDPRESS_GRAPHQL | `https://your-wp-site-url.com/graphql` |
+| GATSBY_SITE_URL          | `https://your-gatsby-site-url.com`     |
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/djuric/videogram)
 
