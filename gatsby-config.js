@@ -10,7 +10,7 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    siteUrl: process.env.GATSBY_WORDPRESS_URL,
+    siteUrl: process.env.GATSBY_SITE_URL,
   },
   plugins: [
     {
