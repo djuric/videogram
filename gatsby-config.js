@@ -9,6 +9,9 @@ require("dotenv").config({
 })
 
 module.exports = {
+  siteMetadata: {
+    siteUrl: process.env.GATSBY_WORDPRESS_URL,
+  },
   plugins: [
     {
       resolve: "gatsby-source-graphql",
@@ -27,5 +30,6 @@ module.exports = {
         path: `${__dirname}/src/assets/images`,
       },
     },
+    "gatsby-plugin-sitemap",
   ],
 }
