@@ -25,7 +25,7 @@
     "isomorphic-fetch": "^3.0.0",
     "joi": "^17.3.0",
     "jwt-decode": "^3.1.2",
-    "lodash": "^4.17.20",
+    "lodash": "^4.17.21",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
