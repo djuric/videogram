@@ -1,4 +1,4 @@
-<h1 align="center"><img src="https://videogram.zarko.dev/wp-content/uploads/2020/01/favicon.png" alt="Videogram" width="28" /> Videogram</h1>
+<h1 align="center"><img src="https://raw.githubusercontent.com/djuric/gifs/main/favicon.png" alt="Videogram" width="28" /> Videogram</h1>
 
 <p align="center">
   <a href="https://github.com/djuric/videogram/blob/master/LICENSE">
@@ -87,13 +87,13 @@ In Advanced build settings you can define following environment variables to dep
 
 ## Lighthouse report
 
-![Lighthouse desktop results](https://videogram.zarko.dev/wp-content/uploads/2020/01/videogram-desktop.png)
+![Lighthouse desktop results](https://raw.githubusercontent.com/djuric/gifs/main/videogram-desktop.png)
 
 - **Device**: Emulated Desktop
 - **Network throttling:** 150 ms TCP RTT, 1,638.4 Kbps throughput (Simulated)
 - **CPU throttling:** 4x slowdown (Simulated)
 
-![Lighthouse mobile results](https://videogram.zarko.dev/wp-content/uploads/2020/01/videogram-mobile.png)
+![Lighthouse mobile results](https://raw.githubusercontent.com/djuric/gifs/main/videogram-mobile.png)
 
 - **Device**: Emulated Nexus 5X
 - **Network throttling:** 150 ms TCP RTT, 1,638.4 Kbps throughput (Simulated)
